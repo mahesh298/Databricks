@@ -1,4 +1,8 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "5"
+# ///
 # MAGIC %md
 # MAGIC # Ingest circuits.csv file
 # MAGIC 1. Read the file using spark dataframe reader API
@@ -91,4 +95,4 @@ display(spark.table(table_name))
 
 # COMMAND ----------
 
-display(spark.table('formula1.bronze.circuits'))
+display(spark.table('formula1.raw.circuits'))

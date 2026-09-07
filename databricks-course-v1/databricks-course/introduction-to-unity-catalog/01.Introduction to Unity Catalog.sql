@@ -4,4 +4,7 @@
 
 -- COMMAND ----------
 
-SELECT current_metastore();
+select current_metastore();
+
+-- COMMAND ----------
+

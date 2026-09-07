@@ -59,6 +59,24 @@ CREATE SCHEMA IF NOT EXISTS formula1.gold
 
 -- COMMAND ----------
 
+-- 1. Landing layer
+CREATE SCHEMA IF NOT EXISTS formula1.landing
+COMMENT 'Internal managed schema for landing/staging raw data';
+
+-- 2. Bronze layer (Raw / Ingested)
+CREATE SCHEMA IF NOT EXISTS formula1.bronze
+COMMENT 'Internal managed schema for bronze Delta tables';
+
+-- 3. Silver layer (Cleaned / Enriched)
+CREATE SCHEMA IF NOT EXISTS formula1.silver
+COMMENT 'Internal managed schema for silver Delta tables';
+
+-- 4. Gold layer (Aggregated / Business-level)
+CREATE SCHEMA IF NOT EXISTS formula1.gold
+COMMENT 'Internal managed schema for gold analytical tables';
+
+-- COMMAND ----------
+
 SELECT current_catalog();
 
 -- COMMAND ----------
@@ -82,3 +100,31 @@ LOCATION 'abfss://formula1@databrickscourseextdl1.dfs.core.windows.net/landing';
 -- COMMAND ----------
 
 -- MAGIC %fs ls /Volumes/formula1/landing/files
+
+-- COMMAND ----------
+
+-- MAGIC %md
+-- MAGIC # Creating Catolog internally
+
+-- COMMAND ----------
+
+CREATE CATALOG IF NOT EXISTS formula1
+COMMENT 'Internal managed catalog using default metastore storage for Formula 1 data';
+
+-- COMMAND ----------
+
+USE CATALOG formula1;
+
+-- COMMAND ----------
+
+SELECT current_metastore();
+
+-- COMMAND ----------
+
+CREATE SCHEMA IF NOT EXISTS formula1.raw
+COMMENT 'Schema for staging files and intermediate datasets';
+
+-- COMMAND ----------
+
+CREATE VOLUME IF NOT EXISTS formula1.raw.landing
+COMMENT 'Internal staging volume for raw CSV files and folder directories';

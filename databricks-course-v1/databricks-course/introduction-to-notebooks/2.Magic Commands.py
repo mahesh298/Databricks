@@ -42,12 +42,21 @@
 
 # COMMAND ----------
 
+# Note: you may need to restart the kernel using %restart_python or dbutils.library.restartPython() to use updated packages.
+%restart_python
+
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC ### %run : Include/ Import another notebook into the current notebook
 
 # COMMAND ----------
 
-# MAGIC %run "./2.1 Environment Variables and Functions"
+# %sh pwd
+
+# COMMAND ----------
+
+# MAGIC %run "/Workspace/Users/maheshsompalli2@gmail.com/Databricks/databricks-course-v1/databricks-course/introduction-to-notebooks/2.1 Environment Variables and Functions"
 
 # COMMAND ----------
 

@@ -37,7 +37,7 @@ VERSION AS OF 1;
 -- COMMAND ----------
 
 SELECT * FROM demo.delta_lake.companies
-TIMESTAMP AS OF '2025-01-07T11:45:12.000+00:00';
+TIMESTAMP AS OF '2026-09-07T21:05:19.000+00:00';
 
 
 -- COMMAND ----------

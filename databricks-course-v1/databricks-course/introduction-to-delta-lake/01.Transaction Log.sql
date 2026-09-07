@@ -17,8 +17,16 @@ MANAGED LOCATION 'abfss://demo@databrickscourseextdl1.dfs.core.windows.net/'
 
 -- COMMAND ----------
 
+CREATE CATALOG IF NOT EXISTS demo
+
+-- COMMAND ----------
+
 CREATE SCHEMA IF NOT EXISTS demo.delta_lake
 MANAGED LOCATION 'abfss://demo@databrickscourseextdl1.dfs.core.windows.net/delta_lake'
+
+-- COMMAND ----------
+
+CREATE SCHEMA IF NOT EXISTS demo.delta_lake
 
 -- COMMAND ----------
 

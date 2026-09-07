@@ -26,6 +26,3 @@ print('Hello Again!')
 
 # MAGIC %sql
 # MAGIC SELECT 'Hello from SQL!'
-
-# COMMAND ----------
-

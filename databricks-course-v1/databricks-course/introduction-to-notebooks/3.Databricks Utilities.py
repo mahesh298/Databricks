@@ -17,10 +17,12 @@
 
 # COMMAND ----------
 
-display(dbutils.fs.ls('/'))
+# display(dbutils.fs.ls('/'))
+dbutils.fs.ls('/')
 
 # COMMAND ----------
 
+# MAGIC
 # MAGIC %fs ls dbfs:/databricks-datasets/
 
 # COMMAND ----------
